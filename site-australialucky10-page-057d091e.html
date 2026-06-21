@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳洲幸运10 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f5ed;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2d2a24;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fffcf7;
+            border-radius: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.04);
+            padding: 2.6rem 2.2rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.8rem; }
+            .page { padding: 1.6rem 1.2rem; }
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            color: #1f3a3f;
+            border-left: 5px solid #b5977a;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #6d6258;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-bottom: 1px dashed #ded5cb;
+            padding-bottom: 0.8rem;
+        }
+
+        .hero-note {
+            background: #ede6dd;
+            padding: 1.6rem 1.8rem;
+            border-radius: 20px;
+            margin-bottom: 2.2rem;
+            font-size: 1rem;
+            color: #2f2a23;
+            position: relative;
+        }
+
+        .hero-note::before {
+            content: "📘";
+            font-size: 1.8rem;
+            position: absolute;
+            left: -0.6rem;
+            top: -0.6rem;
+            background: #f9f5ed;
+            padding: 0.3rem 0.6rem;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .hero-note p {
+            margin-top: 0.4rem;
+        }
+
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+            margin: 2.4rem 0 2rem;
+        }
+
+        .dir-card {
+            background: #ffffff;
+            border: 1px solid #e4dbd0;
+            border-radius: 20px;
+            padding: 1.2rem 1rem 1rem;
+            transition: background 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .dir-card:hover {
+            background: #f7f1ea;
+            border-color: #cbb7a6;
+        }
+
+        .dir-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #3a4e4b;
+        }
+
+        .dir-card p {
+            font-size: 0.9rem;
+            color: #5b5148;
+            margin-bottom: 0.5rem;
+        }
+
+        .dir-card small {
+            color: #988d80;
+            font-size: 0.8rem;
+        }
+
+        .info-panel {
+            background: #f3efe8;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.6rem 0;
+        }
+
+        .info-panel h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #1f3a3f;
+        }
+
+        .info-panel ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-panel li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+            border-bottom: 1px solid #e2d9cf;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-panel li::before {
+            content: "•";
+            color: #b5977a;
+            font-weight: bold;
+            font-size: 1.4rem;
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+        }
+
+        .info-panel li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-box {
+            background: #e8dfd4;
+            border-left: 6px solid #9d8b78;
+            padding: 1.2rem 1.6rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .tip-box strong {
+            color: #1f3a3f;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .faq-item {
+            background: #fffcf7;
+            border: 1px solid #e5dbd0;
+            border-radius: 18px;
+            padding: 0.9rem 1.4rem;
+        }
+
+        .faq-item q {
+            font-style: italic;
+            color: #3e3a34;
+        }
+
+        .faq-item p {
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+            color: #4d463e;
+        }
+
+        .related-links {
+            border-top: 2px solid #ded3c8;
+            padding-top: 1.4rem;
+            margin-top: 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.6rem;
+            font-size: 0.95rem;
+        }
+
+        .related-links a {
+            color: #3b5e5a;
+            text-decoration: none;
+            border-bottom: 1px dotted #b9aa9a;
+            padding-bottom: 1px;
+        }
+
+        .related-links a:hover {
+            color: #1f3a3f;
+            border-bottom-style: solid;
+        }
+
+        .footnote {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8f8478;
+            margin-top: 2.4rem;
+            border-top: 1px solid #e7dfd6;
+            padding-top: 1.5rem;
+        }
+
+        .inline-link {
+            color: #3b5e5a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #cbb7a6;
+        }
+
+        .inline-link:hover {
+            color: #1f3a3f;
+            border-bottom-color: #1f3a3f;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>澳洲幸运10 · 知识库入口</h1>
+    <div class="subhead">日常查询 · 对照索引 · 延伸阅读</div>
+
+    <div class="hero-note">
+        <p>这里是围绕<a href="https://site-australialucky10.com" class="inline-link">澳洲幸运10</a>整理的一份轻量知识索引。不堆砌术语，不贩卖焦虑，只把常用的参考维度、对照信息、常见疑问按目录感陈列出来，方便你随时翻阅或进一步了解。</p>
+    </div>
+
+    <!-- 目录感布局：四个卡片 -->
+    <div class="directory-grid">
+        <div class="dir-card">
+            <h3>📋 基础查询</h3>
+            <p>开奖号码、历史期数、基本规则与术语对照</p>
+            <small>每日更新 · 简洁直列</small>
+        </div>
+        <div class="dir-card">
+            <h3>🗂️ 数据对照</h3>
+            <p>冷热分布、跨度统计、奇偶比例参考</p>
+            <small>图表辅助 · 趋势一览</small>
+        </div>
+        <div class="dir-card">
+            <h3>📖 延伸阅读</h3>
+            <p>概率笔记、常见算法、玩法演变背景</p>
+            <small>非教程 · 只做知识梳理</small>
+        </div>
+        <div class="dir-card">
+            <h3>❓ 常见疑问</h3>
+            <p>规则细节、查询方式、术语解释</p>
+            <small>简明 Q&A · 随查随用</small>
+        </div>
+    </div>
+
+    <!-- 说明区：信息面板 -->
+    <div class="info-panel">
+        <h2>📌 说明区：你可能会用到的几个维度</h2>
+        <ul>
+            <li><strong>基本结构</strong> — 每期开出 10 个号码，从 1 至 20 中随机产生，所有号码均独立摇出。</li>
+            <li><strong>常用参照</strong> — 前五码、后五码、奇偶分布、大小区间（1-10 小 / 11-20 大）是许多查询者最先关注的切面。</li>
+            <li><strong>历史回溯</strong> — 部分站点提供近 50 期、100 期的走势列表，适合做简单的频次统计。</li>
+            <li><strong>延伸阅读方向</strong> — 随机与概率、数字分布均匀性、常见观察方法（非投资建议）。</li>
+        </ul>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+        <strong>📎 提示</strong> — 查询时请以官方实时开奖数据为准。不同站点展示的统计周期、图表样式可能略有差异，建议交叉对照。本页仅作为索引参考，不构成任何形式的使用指引。
+    </div>
+
+    <!-- FAQ 摘要区 -->
+    <h2 style="font-size:1.3rem; margin-top:0.8rem;">❓ 常见疑问摘要</h2>
+    <div class="faq-mini">
+        <div class="faq-item">
+            <q>澳洲幸运10 和澳洲幸运5 有关系吗？</q>
+            <p>两者属于同一体系下的不同玩法，号码数量、开奖方式不同，但底层逻辑相似。</p>
+        </div>
+        <div class="faq-item">
+            <q>哪里可以查到最完整的号码记录？</q>
+            <p>你可以通过<a href="https://site-australialucky10.com" class="inline-link">澳洲幸运10</a>的相关页面查看历史列表，部分第三方站点也提供整理版。</p>
+        </div>
+        <div class="faq-item">
+            <q>冷热号统计有多大的参考意义？</q>
+            <p>冷热是纯粹的历史频率描述，不代表未来概率。适合作为观察角度，但不作为预测依据。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <div class="related-links">
+        <span style="font-weight:500; color:#3a4e4b;">相关信息：</span>
+        <a href="#">走势图表说明</a>
+        <a href="#">号码分布笔记</a>
+        <a href="#">概率基础阅读</a>
+        <a href="#">规则对照表</a>
+        <span style="color:#988d80;">· 持续整理中</span>
+    </div>
+
+    <div class="footnote">
+        知识库入口 · 内容仅供日常查询与延伸阅读 · 不构成任何建议
+    </div>
+
+</div>
+</body>
+</html>
