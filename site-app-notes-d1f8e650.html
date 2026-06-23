@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷速 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafafa;
+      color: #1e1e2a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      flex: 1;
+    }
+
+    /* header */
+    .site-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #e6e9f0;
+      padding-bottom: 1.5rem;
+    }
+
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #111;
+    }
+
+    .site-header .sub {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 0.4rem;
+    }
+
+    /* section */
+    .section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1e293b;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #eef2f6;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .section-title small {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-left: auto;
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .card-item {
+      background: #ffffff;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #eef0f4;
+      transition: box-shadow 0.15s ease;
+    }
+
+    .card-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .card-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #0f172a;
+    }
+
+    .card-item .desc {
+      font-size: 0.9rem;
+      color: #475569;
+      margin-top: 0.2rem;
+    }
+
+    .inline-link {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid #bdd3ff;
+      transition: color 0.1s;
+    }
+
+    .inline-link:hover {
+      color: #1d4ed8;
+      border-bottom-color: #2563eb;
+    }
+
+    .notice-box {
+      background: #f8f9fc;
+      border-left: 3px solid #94a3b8;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+      color: #334155;
+      margin: 1.5rem 0 1.8rem 0;
+    }
+
+    .notice-box .label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #1e293b;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      font-size: 0.88rem;
+      color: #475569;
+      padding-left: 0.5rem;
+      border-left: 2px solid #e2e8f0;
+      padding-left: 0.75rem;
+    }
+
+    .additional-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-top: 0.2rem;
+    }
+
+    .additional-links a {
+      color: #475569;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border-bottom: 1px dotted #cbd5e1;
+    }
+
+    .additional-links a:hover {
+      color: #0f172a;
+      border-bottom-color: #475569;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e6e9f0;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media (max-width: 540px) {
+      .page {
+        padding: 2rem 1.2rem;
+      }
+      .site-header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <h1>雷速 · 知识库</h1>
+      <div class="sub">一个偏向稳定与明确的索引页面 · 围绕平台信息与常用指引</div>
+    </header>
+
+    <!-- 说明区：简明介绍雷速 -->
+    <section class="section">
+      <div class="section-title">
+        <span>📋 关于雷速</span>
+        <small>简要说明</small>
+      </div>
+      <p style="margin-bottom: 0.6rem; color: #1f2937;">
+        <a href="https://site-app-leisu.com" class="inline-link">雷速</a> 是一个面向信息获取与内容检索的平台入口，其定位偏向于提供可被查阅、归档或快速定位的知识型站点。本页整理了几项常用功能分区与提示，方便初次接触的人了解整体结构。
+      </p>
+      <p style="color: #4b5563; font-size: 0.92rem;">
+        若你正在寻找某个具体模块的进入方式，或者希望了解平台当前提供的分类方式，下面几个卡片能够帮你快速建立印象。
+      </p>
+    </section>
+
+    <!-- 目录感布局：卡片式入口 -->
+    <section class="section">
+      <div class="section-title">
+        <span>🧩 内容分区</span>
+        <small>目录</small>
+      </div>
+      <div class="card-list">
+        <div class="card-item">
+          <strong>知识文档</strong>
+          <span class="desc">平台收录的常见问题、操作说明与术语解释，适合按需查阅。</span>
+        </div>
+        <div class="card-item">
+          <strong>工具索引</strong>
+          <span class="desc">列举了与雷速相关的辅助资源与实用链接，便于扩展使用。</span>
+        </div>
+        <div class="card-item">
+          <strong>更新记录</strong>
+          <span class="desc">显示近期功能变动与内容调整，保持对变化的透明感知。</span>
+        </div>
+      </div>
+      <div style="margin-top: 1rem; font-size: 0.88rem; color: #6b7280;">
+        ※ 以上仅为概念性分区，实际内容以 <a href="https://site-app-leisu.com" class="inline-link">雷速</a> 内展示为准。
+      </div>
+    </section>
+
+    <!-- 提示区 -->
+    <section class="section">
+      <div class="section-title">
+        <span>💡 使用提示</span>
+        <small>建议</small>
+      </div>
+      <div class="notice-box">
+        <span class="label">🔹 查找时留意分类标签</span>
+        部分页面在顶部或侧边提供了简洁的标签筛选，善用标签可以更快缩小范围。如果遇到不熟悉的术语，可以先查看知识文档区的解释。
+      </div>
+      <div class="notice-box" style="border-left-color: #60a5fa;">
+        <span class="label">🔹 页面结构可能随更新调整</span>
+        为了保持清晰，索引页的模块名称与顺序会不定期优化，但核心入口通常保持不变。遇到布局变化时可参考本页的分区思路。
+      </div>
+    </section>
+
+    <!-- 相关信息区 / FAQ 摘要 -->
+    <section class="section">
+      <div class="section-title">
+        <span>❓ 常见问题摘要</span>
+        <small>FAQ</small>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 雷速是否提供公开的 API 或数据接口？</div>
+        <div class="a">目前平台主要聚焦于内容展示与知识索引，未开放通用 API。如有合作或定制需求，建议直接联系站内提供的联系方式。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 页面上的链接无法打开怎么办？</div>
+        <div class="a">请先确认网络环境是否正常，部分资源可能因访问策略存在限制。如果确定是链接失效，可通过站内反馈渠道告知维护方。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 如何快速找到之前看过的某个条目？</div>
+        <div class="a">推荐使用浏览器自带的页面内搜索功能（Ctrl+F / Cmd+F），输入关键词即可定位。另外，合理利用分类目录也能提高回溯效率。</div>
+      </div>
+      <div style="margin-top: 1rem; font-size: 0.85rem; color: #6b7280;">
+        更多内容可前往 <a href="https://site-app-leisu.com" class="inline-link">雷速</a> 直接浏览。
+      </div>
+    </section>
+
+    <!-- 附加参考 -->
+    <section class="section">
+      <div class="section-title">
+        <span>🔗 相关信息</span>
+        <small>延伸</small>
+      </div>
+      <div class="additional-links">
+        <a href="#">使用指南</a>
+        <a href="#">内容规范</a>
+        <a href="#">隐私说明</a>
+        <a href="#">联系反馈</a>
+      </div>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #6b7280;">
+        本页仅作为导航参考，不直接提供平台内部数据。所有操作以实际页面为准。
+      </p>
+    </section>
+
+    <footer>
+      <span>索引页 · 信息供参考</span>
+    </footer>
+  </div>
+</body>
+</html>
